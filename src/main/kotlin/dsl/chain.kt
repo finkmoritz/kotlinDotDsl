@@ -1,6 +1,6 @@
 package dsl
 
-open class Chain(var nodes: MutableList<Node>) {
+open class Chain(val nodes: MutableList<Node>) {
 
     infix fun `--`(node: Node): Chain {
         nodes.add(node)
