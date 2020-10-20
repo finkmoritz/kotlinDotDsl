@@ -2,10 +2,10 @@ import dsl.Graph
 import dsl.Node
 
 fun main() {
-    var yellow = Node("yellow")
+    val yellow = Node("yellow")
     val orange = Node("orange")
     val graph = Graph {
-            yellow `--` orange;
+        yellow `--` orange;
     }
     print(graph)
 }
