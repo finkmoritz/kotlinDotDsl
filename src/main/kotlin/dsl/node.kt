@@ -7,4 +7,11 @@ class Node(val title: String) {
     override fun toString(): String {
         return "(${title})"
     }
+
+    override fun equals(other: Any?): Boolean {
+        if (other is Node) {
+            return title == other.title
+        }
+        return false
+    }
 }

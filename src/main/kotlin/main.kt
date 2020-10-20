@@ -3,13 +3,13 @@ import dsl.Node
 
 fun main() {
     val yellow = Node("yellow")
-    val orange = Node("orange")
+    val green = Node("green")
     val red = Node("red")
     val blue = Node("blue")
 
     val graph = Graph (
-        yellow `--` orange `--` red,
-        orange `--` blue,
+        yellow `--` green `--` red,
+        green `--` blue,
     )
     print(graph)
 }

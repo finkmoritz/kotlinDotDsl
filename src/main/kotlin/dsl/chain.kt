@@ -2,13 +2,17 @@ package dsl
 
 open class Chain(val nodes: MutableList<Node>) {
 
-    infix fun `--`(node: Node): Chain {
-        nodes.add(node)
-        return this
+    init {
+        if(nodes.size > nodes.toSet().size) {
+            throw IllegalArgumentException("Chain cannot contain duplicate Nodes!")
+        }
     }
 
-    infix fun `--`(otherChain: Chain): Chain {
-        nodes.addAll(otherChain.nodes)
+    infix fun `--`(node: Node): Chain {
+        if (nodes.contains(node)) {
+            throw IllegalArgumentException("Chain $this already contains Node $node!")
+        }
+        nodes.add(node)
         return this
     }
 
