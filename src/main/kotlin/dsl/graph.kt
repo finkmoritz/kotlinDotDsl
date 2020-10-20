@@ -1,9 +1,9 @@
 package dsl
 
-class Graph(val builder: () -> Edge) {
+class Graph(val builder: () -> Chain) {
 
     override fun toString(): String {
-        val edge = this.builder()
-        return "${edge.firstNode} -- ${edge.secondNode}"
+        val chain = this.builder()
+        return "$chain"
     }
 }
