@@ -10,7 +10,7 @@ open class Chain(val nodes: MutableList<Node>) {
         }
     }
 
-    operator fun rangeTo(node: Node): Chain {
+    operator fun minus(node: Node): Chain {
         if (nodes.contains(node)) {
             throw IllegalArgumentException("Chain $this already contains Node $node!")
         }

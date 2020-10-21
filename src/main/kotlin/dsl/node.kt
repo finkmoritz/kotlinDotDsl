@@ -2,7 +2,7 @@ package dsl
 
 class Node(val title: String) {
 
-    operator fun rangeTo(otherNode: Node): Chain = Chain(mutableListOf(this, otherNode))
+    operator fun minus(otherNode: Node): Chain = Chain(mutableListOf(this, otherNode))
 
     override fun toString(): String {
         return "(${title})"
