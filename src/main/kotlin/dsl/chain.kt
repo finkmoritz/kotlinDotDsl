@@ -2,7 +2,7 @@ package dsl
 
 open class Chain(val nodes: MutableList<Node>) {
 
-    var style = Style.DASHED
+    var style = Style.DOTTED
 
     init {
         if(nodes.size > nodes.distinct().size) {
@@ -10,7 +10,7 @@ open class Chain(val nodes: MutableList<Node>) {
         }
     }
 
-    infix fun `--`(node: Node): Chain {
+    operator fun rangeTo(node: Node): Chain {
         if (nodes.contains(node)) {
             throw IllegalArgumentException("Chain $this already contains Node $node!")
         }

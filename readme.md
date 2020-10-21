@@ -25,8 +25,8 @@ val red = Node("red")
 val blue = Node("blue")
 
 val graph = Graph (
- (yellow `--` green `--` red) [Style.DOTTED],
- green `--` blue,
+    yellow .. green .. red,
+    (green .. blue) [Style.DASHED],
 )
 print(graph)
 ```
@@ -36,4 +36,4 @@ This code prints the following graph:
 (yellow) .. (green) .. (red)
 (green) -- (blue)
 ```
-_(This graph is of course only for demonstrational purpose)_
+_(This graph is of course only for demonstration purpose)_
