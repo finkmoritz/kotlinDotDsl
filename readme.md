@@ -12,8 +12,8 @@ This project aims to mimic this language using various features of the _Kotlin_ 
 This is the graph described with DOT:
 ```
 graph graphname {
-    yellow -- green -- red [style=dotted];
-    green -- blue;
+    yellow -- green -- red;
+    green -- blue [style=dashed];
 }
 ```
 
