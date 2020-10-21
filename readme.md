@@ -25,8 +25,8 @@ val red = Node("red")
 val blue = Node("blue")
 
 val graph = Graph (
-    yellow .. green .. red,
-    (green .. blue) [Style.DASHED],
+    yellow - green - red,
+    (green - blue) [Style.DASHED],
 )
 print(graph)
 ```
