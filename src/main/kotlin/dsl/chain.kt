@@ -2,8 +2,10 @@ package dsl
 
 open class Chain(val nodes: MutableList<Node>) {
 
+    var style = Style.DASHED
+
     init {
-        if(nodes.size > nodes.toSet().size) {
+        if(nodes.size > nodes.distinct().size) {
             throw IllegalArgumentException("Chain cannot contain duplicate Nodes!")
         }
     }
@@ -16,12 +18,17 @@ open class Chain(val nodes: MutableList<Node>) {
         return this
     }
 
+    operator fun get(style: Style): Chain {
+        this.style = style
+        return this
+    }
+
     override fun toString(): String {
         var ret = "";
         if(nodes.isNotEmpty()) {
             ret += nodes[0]
             for(i in 1 until nodes.size) {
-                ret += " -- ${nodes[i]}"
+                ret += " $style ${nodes[i]}"
             }
         }
         return ret

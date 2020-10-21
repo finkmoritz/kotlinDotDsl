@@ -1,5 +1,6 @@
 import dsl.Graph
 import dsl.Node
+import dsl.Style
 
 fun main() {
     val yellow = Node("yellow")
@@ -8,7 +9,7 @@ fun main() {
     val blue = Node("blue")
 
     val graph = Graph (
-        yellow `--` green `--` red,
+        (yellow `--` green `--` red) [Style.DOTTED],
         green `--` blue,
     )
     print(graph)
